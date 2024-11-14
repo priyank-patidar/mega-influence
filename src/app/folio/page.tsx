@@ -54,29 +54,29 @@ export default function RetroInfluencerLandingPage() {
     <div className="min-h-screen bg-black text-green-400 p-4 sm:p-6 font-mono">
       <main className="max-w-4xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
-          <Avatar className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 border-4 border-green-500 shadow-lg shadow-green-500/50">
+          <Avatar className="w-24 h-24 sm:w-30 sm:h-30 mx-auto mb-8 border-3 border-green-500 shadow-lg shadow-green-500/50">
             <AvatarImage src="/placeholder.svg" alt={name} />
-            <AvatarFallback className="bg-green-500 text-black">{name[0]}</AvatarFallback>
+            <AvatarFallback className="bg-black text-green-500">{name[0]}</AvatarFallback>
           </Avatar>
           <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-green-500">{name}</h2>
           <p className="text-lg sm:text-xl text-blue-300 mb-4">{bio}</p>
           <div className="flex justify-center space-x-4 mb-4">
             {[Instagram, Twitter, Youtube].map((Icon, index) => (
-              <Button key={index} variant="outline" size="icon" className="border-green-500 text-green-500 hover:bg-green-500 hover:text-black shadow-md shadow-green-500/30">
+              <Button key={index} variant="outline" size="icon" className="border-black bg-black text-green-500 hover:bg-green-500 hover:text-black shadow-md shadow-green-500/30">
                 <Icon className="h-5 w-5" />
               </Button>
             ))}
           </div>
           <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-            <Button className="bg-green-600 text-green-400 hover:bg-green-600 shadow-md shadow-green-600/30">
+            <Button className="bg-green-600 text-black hover:bg-green-500 shadow-md shadow-green-600/30">
               <Send className="mr-2 h-4 w-4" /> Turbo DM (₹500)
             </Button>
-            <Button variant="outline" className="border-green-500 text-green-500 hover:bg-green-500 hover:text-black shadow-md shadow-green-500/30">Message</Button>
+            <Button variant="outline" className="border-green-500 bg-black text-green-500 hover:bg-green-500 hover:text-black shadow-md shadow-green-500/30">Message</Button>
           </div>
         </div>
 
         <Tabs defaultValue="wishlists" className="w-full">
-          <TabsList className="flex w-full mb-8 gap-4 overflow-x-auto">
+          <TabsList className="flex w-full mb-8 gap-4 overflow-x-auto bg-black">
             {[
               { value: "wishlists", icon: Heart, label: "Wishlists" },
               { value: "offers", icon: Gift, label: "Offers" },
@@ -86,7 +86,7 @@ export default function RetroInfluencerLandingPage() {
               <TabsTrigger 
                 key={value} 
                 value={value} 
-                className="flex-shrink-0 text-sm sm:text-base py-2 px-4 text-green-400 data-[state=active]:bg-green-500 data-[state=active]:text-black rounded shadow-inner shadow-green-500/50"
+                className="flex-shrink-0 text-sm sm:text-base py-2 px-4 bg-black hover:bg-white hover:text-black text-green-500 data-[state=active]:bg-green-500 data-[state=active]:text-black rounded border-2 border-green-500 shadow-inner shadow-green-500/50"
               >
                 <Icon className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 {label}
@@ -132,7 +132,7 @@ export default function RetroInfluencerLandingPage() {
                     <div key={offer} className="bg-black p-4 rounded-lg border border-green-500 shadow-md shadow-green-500/20">
                       <h3 className="font-semibold mb-2 text-green-500">Retro Offer {offer}</h3>
                       <p className="text-sm text-blue-300 mb-2">Get 20% off with code: RETRO20</p>
-                      <Button size="sm" className="bg-green-600 text-green-400 hover:bg-green-600 shadow-sm shadow-green-600/30">Claim Offer</Button>
+                      <Button size="sm" className="bg-green-600 text-black hover:bg-green-500 shadow-sm shadow-green-600/30">Claim Offer</Button>
                     </div>
                   ))}
                 </div>
@@ -149,12 +149,12 @@ export default function RetroInfluencerLandingPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {[1, 2, 3, 4, 5, 6].map((product) => (
                     <div key={product} className="bg-black p-4 rounded-lg border border-green-500 text-center shadow-md shadow-green-500/20 w-[70%] mx-auto">
-                      <div className="w-full h-24 bg-green-500 rounded-md mb-2 flex items-center justify-center text-black font-bold">
+                      <div className="w-full h-24 bg-green-200 rounded-md mb-2 flex items-center justify-center text-black font-bold">
                         Retro {product}
                       </div>
                       <h3 className="font-semibold text-green-500">Vintage Item {product}</h3>
                       <p className="text-sm text-blue-300 mb-2">₹1,499</p>
-                      <Button size="sm" className="w-full bg-green-600 text-green-400 hover:bg-green-600 shadow-sm shadow-green-600/30">Buy Now</Button>
+                      <Button size="sm" className="w-full bg-green-600 text-black hover:bg-green-500 shadow-sm shadow-green-600/30">Buy Now</Button>
                     </div>
                   ))}
                 </div>
@@ -185,7 +185,7 @@ export default function RetroInfluencerLandingPage() {
                   {selectedService && !paymentMade && (
                     <div className="space-y-2">
                       <p className="text-blue-300">Please make a payment to proceed with booking.</p>
-                      <Button onClick={handlePayment} className="w-full bg-green-600 text-green-400 hover:bg-green-600 shadow-md shadow-green-600/30">
+                      <Button onClick={handlePayment} className="w-full bg-green-600 text-black hover:bg-green-500 shadow-md shadow-green-600/30">
                         Make Payment
                       </Button>
                     </div>
